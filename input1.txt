@@ -1,0 +1,29 @@
+#creare user
+0
+giulia
+#afisare produse
+6
+#produs nou
+8
+blush
+120
+35
+#afisare produse
+6
+#comanda noua
+2
+id primit pt giulia
+blush
+#afisare comenzi preluate
+7
+#afisare comanda
+3
+id comenzii de mai sus
+#elimina comanda
+5
+#adauga un produs intr o comanda deja existenta
+1
+id_comanda
+Ruj
+
+
