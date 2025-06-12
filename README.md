@@ -1,59 +1,51 @@
 # ONLINE STORE
-# Proiectul implementeaza un magazin online, realizat cu concepte de poo imbinate cu o baza de date locala.
-## Proiect realizat pentru cursul de POO de la FMI UNIBUC.
+# This project implements an online store using OOP concepts combined with a local database.
+## Project developed for the OOP course at FMI UNIBUC.
 
 
 
-#### Cerințe
-- [ ] definirea a minim **3-4 clase** folosind compunere cu clasele definite de voi; moștenirile nu se iau în considerare aici
-- [ ] constructori de inițializare cu parametri pentru fiecare clasă
-- [ ] pentru o aceeași (singură) clasă: constructor de copiere, `operator=` de copiere, destructor
-<!-- - [ ] pentru o altă clasă: constructor de mutare, `operator=` de mutare, destructor -->
-<!-- - [ ] pentru o altă clasă: toate cele 5 funcții membru speciale -->
-- [ ] `operator<<` pentru **toate** clasele pentru afișare (`std::ostream`) folosind compunere de apeluri cu `operator<<`
-- [ ] cât mai multe `const` (unde este cazul) și funcții `private`
-- [ ] implementarea a minim 3 funcții membru publice pentru funcționalități netriviale specifice temei alese, dintre care cel puțin 1-2 funcții mai complexe
-  - nu doar citiri/afișări sau adăugat/șters elemente într-un/dintr-un vector
-- [ ] scenariu de utilizare **cu sens** a claselor definite:
-  - crearea de obiecte și apelarea tuturor funcțiilor membru publice în main
-  - vor fi adăugate în fișierul `tastatura.txt` DOAR exemple de date de intrare de la tastatură (dacă există); dacă aveți nevoie de date din fișiere, creați alte fișiere separat
-- [ ] minim 50-55% din codul propriu să fie C++, `.gitattributes` configurat corect
-- [ ] tag de `git`: de exemplu `v0.1`
-- [ ] serviciu de integrare continuă (CI) cu **toate bifele**; exemplu: GitHub Actions
+#### Requirements
+- - [ ] Define at least 3-4 classes using composition with your own defined classes; inheritance is not considered here
+- [ ] Parameterized constructors for each class
+- [ ] For the same (single) class: copy constructor, copy operator=, destructor
+<!-- - [ ] For another class: move constructor, move `operator=`, destructor -->
+<!-- - [ ] For another class: all five special member functions -->
+- [ ] operator<< for all classes for display (std::ostream) using chained calls to operator<<
+- [ ] As many const as possible (where applicable) and private functions
+- [ ] Implement at least 3 public member functions with non-trivial functionality specific to your chosen theme, with at least 1-2 being more complex
+- Not just basic input/output or adding/removing elements from/to a vector
+- [ ] Meaningful usage scenario for the defined classes:
+- Create objects and call all public member functions in main
+
+### Inheritance Requirements
+- [ ] At least one base class and 3 derived classes from the same hierarchy
+- [ ] The hierarchy must have a custom base, not derived from a predefined class
+- [ ] Virtual (pure) functions called through base class pointers in the class containing the base pointer attribute
+- At least one virtual function must be specific to the theme (i.e., not just basic input/output or taken from libraries like draw/update/render)
+- Virtual constructors (clone): required, but not considered theme-specific functions
+- Virtual display, non-virtual interface
+- [ ] Base constructor called from derived class constructors
+- [ ] Class with attribute of type pointer to base class with derived types; virtual functions called through base pointer, possibly via non-virtual interface
+- [ ] Copy constructor and copy assignment operator= overridden for correct copy/assignment, using copy and swap idiom
+- [ ] Use of dynamic_cast/std::dynamic_pointer_cast for meaningful downcasting
+- [ ] Smart pointers (recommended, optional)
 
 
 
-#### Cerințe
-- [ ] moșteniri:
-  - minim o clasă de bază și **3 clase derivate** din aceeași ierarhie
-  - ierarhia trebuie să fie cu bază proprie, nu derivată dintr-o clasă predefinită
-  - [ ] funcții virtuale (pure) apelate prin pointeri de bază din clasa care conține atributul de tip pointer de bază
-    - minim o funcție virtuală va fi **specifică temei** (i.e. nu simple citiri/afișări sau preluate din biblioteci i.e. draw/update/render)
-    - constructori virtuali (clone): sunt necesari, dar nu se consideră funcții specifice temei
-    - afișare virtuală, interfață non-virtuală
-  - [ ] apelarea constructorului din clasa de bază din constructori din derivate
-  - [ ] clasă cu atribut de tip pointer la o clasă de bază cu derivate; aici apelați funcțiile virtuale prin pointer de bază, eventual prin interfața non-virtuală din bază
-    - [ ] suprascris cc/op= pentru copieri/atribuiri corecte, copy and swap
-    - [ ] `dynamic_cast`/`std::dynamic_pointer_cast` pentru downcast cu sens
-    - [ ] smart pointers (recomandat, opțional)
-- [ ] excepții
-  - [ ] ierarhie proprie cu baza `std::exception` sau derivată din `std::exception`; minim **3** clase pentru erori specifice distincte
-    - clasele de excepții trebuie să trateze categorii de erori distincte (exemplu de erori echivalente: citire fișiere cu diverse extensii)
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor (sau funcție care întoarce un obiect), `try`/`catch` în `main`
-  - această ierarhie va fi complet independentă de ierarhia cu funcții virtuale
-- [ ] funcții și atribute `static`
+### Exceptions
+- [ ] Custom exception hierarchy derived from std::exception or one of its derivatives; at least 3 distinct exception classes
+- Exceptions must handle distinct error categories (e.g., file reading errors with different extensions are considered equivalent)
+- [ ] Meaningful usage: e.g., throw in constructor (or function returning an object), try/catch in main
+- This hierarchy must be completely independent from the one with virtual functions
+
+
+
+### Additional Requirements
+- [ ] Use of static functions and attributes
 - [ ] STL
-- [ ] cât mai multe `const`
-- [ ] funcții *de nivel înalt*, de eliminat cât mai mulți getters/setters/funcții low-level
-- [ ] minim 75-80% din codul propriu să fie C++
-- [ ] la sfârșit: commit separat cu adăugarea unei noi clase derivate fără a modifica restul codului, **pe lângă cele 3 derivate deja adăugate** din aceeași ierarhie
-  - noua derivată nu poate fi una existentă care a fost ștearsă și adăugată din nou
-  - noua derivată va fi integrată în codul existent (adică va fi folosită, nu adăugată doar ca să fie)
-
-
-conțin fișiere generate și nu ne ajută să le versionăm.
-
-
-## Resurse
-
-- adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
+- [ ] As many const as possible
+- [ ] High-level functions: eliminate excessive getters/setters/low-level functions
+- [ ] At least 75-80% of the code must be your own C++ code
+- [ ] Final commit: add a new derived class without modifying the existing code, in addition to the 3 already added in the same hierarchy
+- The new derived class cannot be a previously deleted one re-added
+- The new derived class must be integrated into the existing code (i.e., actually used, not added just for show)
